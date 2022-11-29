@@ -1,10 +1,16 @@
 # Budget-app
+
 Simple Budget-app using ReactJs/ChartsJs/LocalStorage
 
 ## Features:
-1. Add-Delete-Read Expenses
-2. Add-Delete-Read Incomes
-3. Dynamic Chart Showing Each Month Expenses And Incomes By Categories
+
+- Add-Delete-Read Expenses
+- Add-Delete-Read Incomes
+- Dynamic Chart Showing Each Month Expenses And Incomes By Categories
+
+## Online Demo
+
+Try The App By [Clicking Here](https://tarikbouchaala-budget-app.netlify.app)
 
 ![miniaturepng](https://user-images.githubusercontent.com/112863517/204526739-77dd2047-4c17-461c-81e3-440836fe610e.png)
 
@@ -13,3 +19,7 @@ Simple Budget-app using ReactJs/ChartsJs/LocalStorage
 ![Income](https://user-images.githubusercontent.com/112863517/204526924-95c2e82b-282d-47d7-ac89-036e01dadd76.png)
 
 ![Analysis](https://user-images.githubusercontent.com/112863517/204526955-218e77e9-5d6e-478e-b513-8d1d43ae6087.png)
+
+## 📫 Feedback
+
+If you have any feedback, please reach out to at tarikbouchaalaprof@gmail.com
