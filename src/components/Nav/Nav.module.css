@@ -1,0 +1,70 @@
+.Nav {
+    width: 277px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1E1E20;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.Nav .navigation {
+    margin-top: 74px;
+}
+
+.Nav .navigation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 83px;
+    align-items: center;
+}
+
+.Nav .navigation .logo {
+    color: white;
+    font-size: 32px;
+}
+
+.Nav .navigation .links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.Nav .navigation .links a {
+    margin: 8px 0px;
+    width: 278.22px;
+    text-decoration: none;
+    color: white;
+    padding: 13px 0px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    font-weight: 500;
+}
+
+.Nav .navigation .links a:hover {
+    background-color: white;
+    border-radius: 5px;
+    color: #1E1E20;
+}
+
+.Nav .navigation .links a.active {
+    background-color: white;
+    border-radius: 5px;
+    color: #1E1E20;
+}
+
+.Nav .social {
+    display: flex;
+    gap: 19.7px;
+    justify-content: center;
+    margin-bottom: 46px;
+}
+
+.Nav .social svg {
+    width: 25px;
+    height: 25px;
+    fill: white;
+    cursor: pointer;
+}

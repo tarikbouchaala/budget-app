@@ -1,0 +1,36 @@
+.Home {
+    width: 100%;
+    background-image: url('../../assets/images/testWall.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.Home .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 811px;
+    height: 327px;
+    align-items: center;
+}
+
+.Home .description .quoteSvg svg {
+    width: 50px;
+    height: 50px;
+    fill: white;
+}
+
+.Home .description .quoteBody {
+    font-size: 34px;
+    font-style: italic;
+    text-align: center;
+    font-family: Georgia;
+}
+
+.Home .description .quoteFooter {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
