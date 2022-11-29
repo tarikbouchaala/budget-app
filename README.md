@@ -23,3 +23,8 @@ Try The App By [Clicking Here](https://tarikbouchaala-budget-app.netlify.app)
 ## 📫 Feedback
 
 If you have any feedback, please reach out to at tarikbouchaalaprof@gmail.com
+
+## :information_source: Info
+
+The app is not completed yet; I still need to make it responsive and add a select where the user can choose the year to display in the charts.
+
