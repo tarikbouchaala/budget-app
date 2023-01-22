@@ -7,6 +7,16 @@ import { Home } from './components/Home/Home';
 import { Expenses } from './components/Expenses/Expenses';
 import { Incomes } from './components/Incomes/Incomes';
 import { Analysis } from './components/Analysis/Analysis';
+
+//function to get allYears in our data
+export const getYears = (data) => {
+  let allYears = [];
+  for (let i of data) {
+    allYears.push(i.date.split(" ")[0].split('-')[0])
+  }
+  return [...new Set(allYears)]
+}
+
 function App() {
   useEffect(() => {
     if (localStorage.getItem('expenses') == null) {
@@ -84,6 +94,12 @@ function App() {
   const [categorieAnalysisE, setcategorieAnalysisE] = useState(0)
   const [categorieAnalysisI, setcategorieAnalysisI] = useState(0)
 
+  const expensesYears=localStorage.getItem('expenses') && getYears(JSON.parse(localStorage.getItem('expenses'))).sort()
+  const [selectedYearE, setSelectedYearE] = useState(expensesYears && expensesYears[0]);
+
+  const incomesYears=localStorage.getItem('incomes') && getYears(JSON.parse(localStorage.getItem('incomes'))).sort()
+  const [selectedYearI, setSelectedYearI] = useState(incomesYears && incomesYears[0]);
+
   useEffect(() => {
     setNameE("")
     setCategorieE("")
@@ -93,8 +109,6 @@ function App() {
     setCategorieI("")
     setPriceI("")
   }, [tableExpanses, tableIncomes])
-
-
 
   useEffect(() => {
     if (categorieAnalysisE == "") {
@@ -195,7 +209,6 @@ function App() {
         currentDate = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()} ${currentDate.toLocaleTimeString()}`
         let newTableExpanses = [...tableExpanses, { id: tableExpanses.length > 0 ? tableExpanses[tableExpanses.length - 1].id + 1 : 1, name: nameE, categorie: parseInt(categorieE), price: parseFloat(priceE), date: currentDate }]
         setTableExpanses([...newTableExpanses])
-        console.log(newTableExpanses)
         localStorage.setItem('expenses', JSON.stringify(newTableExpanses))
         Array.from(event.target.previousSibling.children).forEach(formSection => {
           formSection.children[1].value = ""
@@ -468,7 +481,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='expenses' element={<Expenses deleteAllE={deleteAllE} tableExpanses={tableExpanses} removeExpense={removeExpense} categorieObjet={categorieObjetE} handleChangeName={(e) => setNameE(e.target.value)} handleChangeCategorie={(e) => setCategorieE(e.target.value)} handleChangePrice={(e) => setPriceE(e.target.value)} addExpanse={addExpanse} />} />
           <Route path='incomes' element={<Incomes deleteAllI={deleteAllI} tableIncomes={tableIncomes} removeIncome={removeIncome} categorieObjet={categorieObjetI} handleChangeName={(e) => setNameI(e.target.value)} handleChangeCategorie={(e) => setCategorieI(e.target.value)} handleChangePrice={(e) => setPriceI(e.target.value)} addIncome={addIncome} />} />
-          <Route path='analysis' element={<Analysis categorieAnalysisI={categorieAnalysisI} categorieAnalysisE={categorieAnalysisE} categorieObjetI={categorieObjetI} categorieObjetE={categorieObjetE} filterCategorieAnalysisI={e => setcategorieAnalysisI(e.target.value)} filterCategorieAnalysisE={e => setcategorieAnalysisE(e.target.value)} />} />
+          <Route path='analysis' element={<Analysis expensesYears={expensesYears} incomesYears={incomesYears} categorieAnalysisI={categorieAnalysisI} categorieAnalysisE={categorieAnalysisE} categorieObjetI={categorieObjetI} categorieObjetE={categorieObjetE} selectedYearE={selectedYearE} selectedYearI={selectedYearI} changeSelectedYearI={e => setSelectedYearI(e.target.value)} changeSelectedYearE={e => setSelectedYearE(e.target.value)} filterCategorieAnalysisI={e => setcategorieAnalysisI(e.target.value)} filterCategorieAnalysisE={e => setcategorieAnalysisE(e.target.value)} />} />
         </Routes>
       </div>
     </Router>

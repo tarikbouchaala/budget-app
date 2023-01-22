@@ -21,11 +21,11 @@ ChartJS.register(
 
 
 export function Analysis(props) {
-  //function to get value for each month
-  function getMonthValue(month, data) {
+  //function to get value for each month for a specific year
+  function getMonthValue(month, data, year) {
     let value = 0;
     for (let i of data) {
-      if (i.date.split(' ')[0].split("-")[1] == month) {
+      if (i.date.split(' ')[0].split("-")[1] == month && i.date.split(' ')[0].split("-")[0] == year) {
         value += i.price
       }
     }
@@ -35,6 +35,7 @@ export function Analysis(props) {
   let optionsE;
   let dataI;
   let optionsI;
+
   //Expenses Chart:
   if (localStorage.getItem('expenses') != null) {
     const getLocalStorageE = JSON.parse(localStorage.getItem('expenses'));
@@ -48,7 +49,9 @@ export function Analysis(props) {
     }
     let dataToUse = [];
     for (let i = 1; i <= 12; i++) {
-      dataToUse.push(getMonthValue(i, getLocalStorageELabel))
+      if (props.selectedYearE) {
+        dataToUse.push(getMonthValue(i, getLocalStorageELabel, props.selectedYearE))
+      }
     }
     dataE = {
       labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -98,9 +101,10 @@ export function Analysis(props) {
 
     let dataToUseI = [];
     for (let i = 1; i <= 12; i++) {
-      dataToUseI.push(getMonthValue(i, getLocalStorageILabel))
+      if (props.selectedYearI) {
+        dataToUseI.push(getMonthValue(i, getLocalStorageILabel, props.selectedYearI))
+      }
     }
-
     dataI = {
       labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
       datasets: [
@@ -137,27 +141,36 @@ export function Analysis(props) {
     };
   }
 
-
   return <div className={AnalysisCss.Analysis}>
     <div className={AnalysisCss.header}>Analysis</div>
     <div className={AnalysisCss.Charts}>
-      {localStorage.getItem('expenses') != null && JSON.parse(localStorage.getItem('expenses')).length!=0? <div className={AnalysisCss.AnalysisExpenses}>
+      {localStorage.getItem('expenses') && JSON.parse(localStorage.getItem('expenses')).length != 0 ? <div className={AnalysisCss.AnalysisExpenses}>
         <div className={AnalysisCss.headerChart}>
           <label htmlFor="categorie">Expenses Categorie:</label>
-          <select onChange={e => props.filterCategorieAnalysisE(e)} type="text" name='categorie'>
+          <select onChange={e => props.filterCategorieAnalysisE(e)} value={props.categorieAnalysisE} name='categorie'>
             <option value="">All Categories</option>
             {props.categorieObjetE.map(categorie => <option key={categorie.id} value={categorie.id}>{categorie.libelle}</option>)}
           </select>
+          {props.expensesYears.length > 1 &&
+            <select onChange={e => props.changeSelectedYearE(e)} value={props.selectedYearE} name='year'>
+              {props.expensesYears.map((year, i) => <option key={i} value={year}>{year}</option>)}
+            </select>
+          }
         </div>
         <Bar data={dataE} options={optionsE} width={600} height={400} />
       </div> : <h1>No Expenses Inserted Yet</h1>}
-      {localStorage.getItem('incomes') != null && JSON.parse(localStorage.getItem('incomes')).length!=0? <div className={AnalysisCss.AnalysisIncomes}>
+      {localStorage.getItem('incomes') != null && JSON.parse(localStorage.getItem('incomes')).length != 0 ? <div className={AnalysisCss.AnalysisIncomes}>
         <div className={AnalysisCss.headerChart}>
           <label htmlFor="categorie">Incomes Categorie:</label>
-          <select onChange={e => props.filterCategorieAnalysisI(e)} type="text" name='categorie'>
+          <select onChange={e => props.filterCategorieAnalysisI(e)} value={props.categorieAnalysisI} name='categorie'>
             <option value="">All Categories</option>
             {props.categorieObjetI.map(categorie => <option key={categorie.id} value={categorie.id}>{categorie.libelle}</option>)}
           </select>
+          {props.incomesYears.length > 1 &&
+            <select onChange={e => props.changeSelectedYearI(e)} value={props.selectedYearI} name='year'>
+              {props.incomesYears.map((year, i) => <option key={i} value={year}>{year}</option>)}
+            </select>
+          }
         </div>
         <Bar data={dataI} options={optionsI} width={600} height={400} />
       </div> : <h1>No Incomes Inserted Yet</h1>}
