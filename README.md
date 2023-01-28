@@ -10,7 +10,7 @@ Simple Budget-app using ReactJs/ChartsJs/LocalStorage
 
 ## Online Demo
 
-Try The App By [Clicking Here](https://tarikbouchaala-budget-app.netlify.app)
+Try The App By [Clicking Here](https://budget-app-tarik.netlify.app/)
 
 ![miniaturepng](https://user-images.githubusercontent.com/112863517/204526739-77dd2047-4c17-461c-81e3-440836fe610e.png)
 
