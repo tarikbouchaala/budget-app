@@ -26,4 +26,7 @@ If you have any feedback, please reach out to at tarikbouchaalaprof@gmail.com
 
 ## :information_source: Info
 
-Please note that the app is not yet fully responsive, but I am planning to make it responsive in the future. Thank you for trying out my app! If you find the app helpful or if you like the project, please don't forget to star the repo!
+Please note that this app is not yet responsive, so it may not display properly on all devices. However, I am working on adding responsive design in future updates.
+
+Thanks for checking out my budget app!
+
