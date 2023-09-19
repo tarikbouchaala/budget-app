@@ -1,53 +1,55 @@
 .Analysis {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .Analysis .header {
-    font-size: 80px;
-    margin-top: 32px;
+  font-size: 80px;
+  margin-top: 32px;
 }
 
 .Analysis .Charts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 110.7px;
-    margin: 54.5px 117.7px 260.5px 134px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 110.7px;
+  margin: 54.5px 117.7px 260.5px 134px;
 }
 
 .Analysis .AnalysisExpenses,
 .Analysis .AnalysisIncomes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 750px;
 }
 
 .Analysis .headerChart {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 54.5px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 54.5px;
 }
 
 .Analysis label {
-    font-size: 20px;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    margin-bottom: 16.5px ;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  margin-bottom: 16.5px;
 }
 
 .Analysis .Charts .headerChart select {
-    background-color: #1E1E20;
-    color: white;
-    width: 369px;
-    border: 1px solid #1E1E20;
-    font-size: 20px;
-    padding-left: 24px;
-    padding-top: 14.5px;
-    padding-bottom: 14.5px;
-    border-radius: 11px;
-    border-right: 21px solid #1E1E20;
+  background-color: #1e1e20;
+  color: white;
+  width: 369px;
+  margin-bottom: 10px;
+  border: 1px solid #1e1e20;
+  font-size: 20px;
+  padding-left: 24px;
+  padding-top: 14.5px;
+  padding-bottom: 14.5px;
+  border-radius: 11px;
+  border-right: 21px solid #1e1e20;
 }

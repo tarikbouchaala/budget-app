@@ -2,11 +2,22 @@
 
 Simple Budget-app using ReactJs/ChartsJs/LocalStorage
 
+This is a budget app built using React.js, Chart.js, and local storage. The app allows users to easily manage their finances by tracking expenses and incomes, and displaying them in dynamic charts.
+
 ## Features
 
 1. Add-Delete-Read Expenses
 2. Add-Delete-Read Incomes
 3. Dynamic Chart Showing Each Month Expenses And Incomes By Categories
+## Features:
+
+- Add, delete, and read expenses and incomes
+- Dynamic chart showing each month's expenses and incomes by categories
+- Data stored using local storage
+
+## Online Demo
+
+Try The App By [Clicking Here](https://budget-app-tarik.netlify.app/)
 
 ![miniaturepng](https://user-images.githubusercontent.com/112863517/204526739-77dd2047-4c17-461c-81e3-440836fe610e.png)
 
@@ -15,3 +26,14 @@ Simple Budget-app using ReactJs/ChartsJs/LocalStorage
 ![Income](https://user-images.githubusercontent.com/112863517/204526924-95c2e82b-282d-47d7-ac89-036e01dadd76.png)
 
 ![Analysis](https://user-images.githubusercontent.com/112863517/204526955-218e77e9-5d6e-478e-b513-8d1d43ae6087.png)
+
+## 📫 Feedback
+
+If you have any feedback, please reach out to at tarikbouchaalaprof@gmail.com
+
+## :information_source: Info
+
+Please note that this app is not yet responsive, so it may not display properly on all devices. However, I am working on adding responsive design in future updates.
+
+Thanks for checking out my budget app!
+
