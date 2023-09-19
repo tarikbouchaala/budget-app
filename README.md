@@ -1,7 +1,9 @@
 # Budget-app
+
 Simple Budget-app using ReactJs/ChartsJs/LocalStorage
 
-## Features:
+## Features
+
 1. Add-Delete-Read Expenses
 2. Add-Delete-Read Incomes
 3. Dynamic Chart Showing Each Month Expenses And Incomes By Categories

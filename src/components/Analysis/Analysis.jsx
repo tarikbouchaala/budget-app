@@ -141,7 +141,7 @@ export function Analysis(props) {
   return <div className={AnalysisCss.Analysis}>
     <div className={AnalysisCss.header}>Analysis</div>
     <div className={AnalysisCss.Charts}>
-      {localStorage.getItem('expenses') != null && JSON.parse(localStorage.getItem('expenses')).length!=0? <div className={AnalysisCss.AnalysisExpenses}>
+      {localStorage.getItem('expenses') != null && JSON.parse(localStorage.getItem('expenses'))?.length!=0? <div className={AnalysisCss.AnalysisExpenses}>
         <div className={AnalysisCss.headerChart}>
           <label htmlFor="categorie">Expenses Categorie:</label>
           <select onChange={e => props.filterCategorieAnalysisE(e)} type="text" name='categorie'>
@@ -151,7 +151,7 @@ export function Analysis(props) {
         </div>
         <Bar data={dataE} options={optionsE} width={600} height={400} />
       </div> : <h1>No Expenses Inserted Yet</h1>}
-      {localStorage.getItem('incomes') != null && JSON.parse(localStorage.getItem('incomes')).length!=0? <div className={AnalysisCss.AnalysisIncomes}>
+      {localStorage.getItem('incomes') != null && JSON.parse(localStorage.getItem('incomes'))?.length!=0? <div className={AnalysisCss.AnalysisIncomes}>
         <div className={AnalysisCss.headerChart}>
           <label htmlFor="categorie">Incomes Categorie:</label>
           <select onChange={e => props.filterCategorieAnalysisI(e)} type="text" name='categorie'>
